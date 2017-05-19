@@ -1,5 +1,10 @@
 angular.module('app').controller('ctrl', function($scope, service){
 
-  $scope.service = arrayService.test1;
 
-});
+  service.getData().then(function(response){
+    $scope.starships = response.data.results
+    console.table($scope.starships)
+  })
+
+
+})

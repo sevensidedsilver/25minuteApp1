@@ -1,11 +1,27 @@
-<html ng-app="arrayApp">
+<html ng-app="app">
 	<head>
 		<link rel="stylesheet" href="style.css"></link>
 	</head>
-	<body ng-controller="arrayController">
+	<body ng-controller="ctrl">
 
 
-		{{service}}
+		<h1>StarWars Vehicles</h1>
+
+		<input id="search" placeholder="Search Here" ng-model="these.name">
+
+
+		<div ng-repeat="ship in starships | filter: these">
+
+			<h3>{{ship.name}}<h3>
+
+			<h5 class = "manu">{{ship.manufacturer}}</h5>
+
+			<p>{{ship.starship_class}}</p>
+
+			<hr>
+
+		</div>
+
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
